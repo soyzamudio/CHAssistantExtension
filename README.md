@@ -1,3 +1,5 @@
+### WHEN ASKED FOR YOUR NAME IN THE EXTENSION, ENTER FIRST NAME IN LOWER CASE
+
 # How to install
 
 ### Inside your desired directory in terminal:
