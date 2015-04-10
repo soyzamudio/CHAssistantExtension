@@ -1,0 +1,12 @@
+<div id='alert' class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-available" ng-class='{"btn-not-available": !user.available}' ng-click='availability()'><span class="pull-left icon ion-ios-bolt"></span>
+        <span class='text-capitalize'>{{user.$id}}</span>, You are currently Available
+      </button>
+    </div>
+    <div class="col-md-12">
+      <button class="btn btn-primary" ng-click='logout()'>Log Out</button>
+    </div>
+  </div>
+</div>
