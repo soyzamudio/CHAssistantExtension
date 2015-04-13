@@ -3,7 +3,7 @@ angular.module('alert')
   $scope.username = null;
   $scope.setName = function() {
     chrome.storage.local.set({'name': $scope.username}, function() {
-      $rootScope.name = $scope.username;
+      $rootScope.name = $scope.username.toLowerCase();
       $state.go('home');
     });
   }

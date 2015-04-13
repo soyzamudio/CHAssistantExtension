@@ -21,7 +21,6 @@ angular.module('background', ['firebase'])
       message: snapshot.val(),
       iconUrl: "../../icons/icon128.png"
     }
-    console.log(opt);
-    chrome.notifications.create('notify' + i, opt, function(id) { i++; });
+    chrome.notifications.create('food' + i, opt, function(id) { i++; });
   });
 }]);

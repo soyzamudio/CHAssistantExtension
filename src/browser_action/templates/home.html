@@ -1,7 +1,7 @@
 <div id='alert' class="container">
   <div class="row">
     <div class="col-md-12">
-      <button class="btn btn-available" ng-class='{"btn-not-available": !user.available}' ng-click='availability()'><span class="pull-left icon ion-ios-bolt"></span>
+      <button class="btn btn-available" ng-class='{"btn-not-available": !user.available}' ng-click='availability()'>
         <span class='text-capitalize'>{{user.$id}}</span>, You are currently <span ng-if='user.available'>available</span><span ng-if='!user.available'>not available</span>
       </button>
     </div>
