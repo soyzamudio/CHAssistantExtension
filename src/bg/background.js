@@ -18,11 +18,12 @@ angular.module('background', ['firebase'])
   food.on("value", function(snapshot) {
     var opt = {
       type: "basic",
-      title: 'Dinner is ready!',
+      title: 'Food is ready!',
       message: snapshot.val().dinner,
-      iconUrl: "../../icons/icon128.png"
+      iconUrl: "../../icons/food.png"
     }
-    var current = new Date().getTime();
-    (current - 600000 > snapshot.val().timestamp) ? console.log('Old notification') : chrome.notifications.create('food' + i, opt, function(id) { i++; });
+    chrome.notifications.create('food' + i, opt, function(id) { i++; });
+    // var current = new Date().getTime();
+    // (current - 600000 > snapshot.val().timestamp) ? console.log('Old notification') : chrome.notifications.create('food' + i, opt, function(id) { i++; });
   });
 }]);
