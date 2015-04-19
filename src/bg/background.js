@@ -9,18 +9,20 @@ angular.module('background', ['firebase'])
       message: snapshot.val().student + ' needs your help',
       iconUrl: "../../icons/icon128.png"
     }
-    chrome.notifications.create('notify' + i, opt, function(id) { i++; });
+    var current = new Date().getTime();
+    (current - 600000 > snapshot.val().timestamp) ? console.log('Old notification') : chrome.notifications.create('notify' + i, opt, function(id) { i++; });
   });
 
-  var food = new Firebase('https://get-ta.firebaseio.com/food/dinner');
+  var food = new Firebase('https://get-ta.firebaseio.com/food/');
   var i = 0;
   food.on("value", function(snapshot) {
     var opt = {
       type: "basic",
       title: 'Dinner is ready!',
-      message: snapshot.val(),
+      message: snapshot.val().dinner,
       iconUrl: "../../icons/icon128.png"
     }
-    chrome.notifications.create('food' + i, opt, function(id) { i++; });
+    var current = new Date().getTime();
+    (current - 600000 > snapshot.val().timestamp) ? console.log('Old notification') : chrome.notifications.create('food' + i, opt, function(id) { i++; });
   });
 }]);
