@@ -22,8 +22,7 @@ angular.module('background', ['firebase'])
       message: snapshot.val().dinner,
       iconUrl: "../../icons/food.png"
     }
-    chrome.notifications.create('food' + i, opt, function(id) { i++; });
-    // var current = new Date().getTime();
-    // (current - 600000 > snapshot.val().timestamp) ? console.log('Old notification') : chrome.notifications.create('food' + i, opt, function(id) { i++; });
+    var current = new Date().getTime();
+    (current - 600000 > snapshot.val().timestamp) ? console.log('Old notification') : chrome.notifications.create('food' + i, opt, function(id) { i++; });
   });
 }]);
